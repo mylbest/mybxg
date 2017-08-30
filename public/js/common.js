@@ -1,4 +1,4 @@
-define(['jquery','cookie'], function($) {
+define(['jquery','template','cookie'], function($,template) {
   // NProgress.start();
   // NProgress.done();
 
@@ -30,11 +30,16 @@ define(['jquery','cookie'], function($) {
     location.href='/main/login';
   }
 
-  // 获取用户信息
-  var loginInfo=JSON.parse($.cookie('loginInfo'));
+  // 获取用户信息登录信息，并填充页面
+  var cookie=$.cookie('loginInfo');
+  // var loginInfo=cookie?JSON parse(cookie):{};
+  var loginInfo = cookie?JSON.parse(cookie):{};
   // console.log(loginInfo);
-  $('.profile img').attr('src',loginInfo.tc_avater);
-  $('.profile h4').html(loginInfo.tc_name);
+  // $('.profile img').attr('src',loginInfo.tc_avater);
+  // $('.profile h4').html(loginInfo.tc_name);
+    var tpl = '<div class="avatar img-circle"><img src="{{tc_avatar}}"></div><h4>{{tc_name}}</h4>';
+            var html = template.render(tpl,loginInfo);
+            $('#profileId').html(html);
 
 
 });
