@@ -1,6 +1,7 @@
-define(['jquery','template','bootstrap'],function($,template){
+define(['jquery','template','util','bootstrap'],function($,template,util){
 	// console.log(11111111);
    // 请求后台接口获取列表数据
+    util.setMenu(location.pathname);
    $.ajax({
    	 type:'get',
    	 url:'/api/teacher',
