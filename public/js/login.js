@@ -1,5 +1,5 @@
 define(['jquery','cookie'],function($){
-  
+          // console.log(111111);
 	       $('#loginBtn').click(function(){
 	            $.ajax({
 	                type:'post',
