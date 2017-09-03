@@ -11,6 +11,7 @@ require.config({
     uploadify:'uploadify/jquery.uploadify.min',
     region:'jquery-region/jquery.region',
     ckeditor:'ckeditor/ckeditor',
+    nprogress:'nprogress/nprogress',
     form:'jquery-form/jquery.form',
     common : '../js/common',
     login : '../js/login',
@@ -18,7 +19,8 @@ require.config({
     util:'../js/util',
     teacherlist:'../js/teacher-list',
     teacheradd:'../js/teacher-add',
-    settings:'../js/settings'
+    settings:'../js/settings',
+    state:'../js/state'
    },
    shim : {
     bootstrap : {
